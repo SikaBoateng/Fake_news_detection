@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en-US">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--  -->
+    <!--    Document Title--><!-- =============================================-->
+    <title>Aqu8 | Home</title>
+    <!--  -->
+    <!--    Favicons--><!--    =============================================-->
+    <link rel="favicons" href="{{ url_for('static', filename='assets/images/favicons/au8.png')}}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!--  --><!--    Stylesheets-->
+    <!--    =============================================-->
+    <!-- Default stylesheets-->
+    <link href="{{ url_for('static', filename='assets/lib/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Montserrat:100,300,400,600')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Droid+Serif:400,400i')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/lib/iconsmind/iconsmind.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/lib/css-hamburgers/dist/hamburgers.css')}}" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="{{ url_for('static', filename='assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/custom.css')}}" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".inner-link" data-offset="60">
+    <main>
+        <div class="znav-container znav-white znav-fixed border-bottom color-10" id="znav-container">
+            <div class="container">
+                <nav class="navbar navbar-toggleable-md">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <div class="hamburger hamburger--emphatic">
+                            <div class="hamburger-box">
+                                <div class="hamburger-inner"></div></div></div></button><a class="navbar-brand overflow-hidden" href="index.html">
+                                    <img  src="{{ url_for('static', filename='assets/images/aqu8.png')}}" alt='logo' width='80px'></a>
+                                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                        <ul class="navbar-nav ml-auto"><li><a href="JavaScript:void(0)">Welcome</a>
+                                            </ul></div></nav></div>
+                                            <!-- /.container--></div>
+                                            <!-- /.znav-container-->
+                                            
+                                            <section class="font-1 py-0">
+                                                <div class="container">
+                                                    <div class="row h-lg-full align-items-end overflow-hidden">
+                                                <div class="col text-center pt-8">
+                                                <h6 class="ls text-uppercase mb-5">Fake News Detection System</h6>
+                                                
+                                                <h2 class="fw-300">Detect <span class="color-primary">
+                                                    <br class="hidden-sm-up"><span class="typed-text fw-400" data-typed-text='["fake","false","wrong","incorrect"]'></span></span>
+                                                    <br class="hidden-sm-up">news articles </h2>
+                                                    
+                                                    <p class="mt-1 lead color-5">Check the authenticity of your news. </p>
+
+                                                    <form action="/predict" method="POST">
+                                                        <label for="news_text">Enter your news article:</label><br>
+                                                        <textarea  oninput="validateLinks(this)" id="news_text" name="news_text" rows="4" cols="50" required="required"></textarea><br>
+                                                        <input type="submit" class="btn btn-primary btn-sm mt-5" value="Detect">
+                                                    </form>
+                                                    {% if prediction %}
+                                                        <h2>Prediction: {{ prediction }}</h2>
+                                                        <p>News Text: {{ news_text }}</p>
+                                                    {% endif %}
+
+                                                    <br>
+                                                        <h6 class="ls text-uppercase mb-5">This model has a 93% accuracy</h6>                                                       
+</main>
+
+<!--  -->
+<!--    JavaScripts--><!--    =============================================-->
+<script src="{{ url_for('static', filename= 'assets/lib/jquery/dist/jquery.js')}}"></script>
+<script src="{{ url_for('static', filename= '../../cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js')}}"></script>
+<script src="{{ url_for('static', filename= 'assets/lib/bootstrap/dist/js/bootstrap.min.js')}}">
+
+</script>
+
+<script src="{{ url_for('static', filename='assets/lib/typed.js/dist/typed.min.js')}}"></script>
+<script src="{{ url_for('static', filename= 'assets/lib/isotope/dist/isotope.pkgd.js')}}"></script>
+<script src="{{ url_for('static', filename= 'assets/js/core.js')}}"></script>
+<script src="{{ url_for('static', filename= 'assets/js/main.js')}}"></script>
+</body>
+</html>
